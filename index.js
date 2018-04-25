@@ -12,12 +12,12 @@ function getPosts(medium) {
         $('.streamItem--postPreview').each(function(index, article) {
           var image = $(article).find('.graf-image').first().data('image-id');
           posts[index] = {
-            title: $(article).find('.graf--leading').text(),
+            title: $(article).find('.graf--title').text(),
             time: $(article).find('time').text(),
             image: image ? `https://cdn-images-1.medium.com/max/900/${image}` : null,
             url: $(article).find('.postArticle-readMore').find('a').attr('href').split('?')[0],
             claps: $(article).find('.postArticle').find('.multirecommend').find('span').find('.button').text()
-            
+
           }
         })
         posts.success = true;
