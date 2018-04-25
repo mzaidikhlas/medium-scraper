@@ -15,7 +15,9 @@ function getPosts(medium) {
             title: $(article).find('.graf--leading').text(),
             time: $(article).find('time').text(),
             image: image ? `https://cdn-images-1.medium.com/max/900/${image}` : null,
-            url: $(article).find('.postArticle-readMore').find('a').attr('href').split('?')[0]
+            url: $(article).find('.postArticle-readMore').find('a').attr('href').split('?')[0],
+            claps: $(article).find('.postArticle').find('.multirecommend').find('span').find('.button').text()
+            
           }
         })
         posts.success = true;
